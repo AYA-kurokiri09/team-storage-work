@@ -1,0 +1,27 @@
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
+$header-height: 3rem;
+
+header{color: #fff;
+        background-color: black;
+        height: $header-height;
+        width: 100%;
+        display: inline-flex;
+        justify-content: flex-end;
+    a {font-size: 1rem;
+        text-align: center;
+        line-height: $header-height;
+        width: 6rem;
+        color: #fff;
+        background-color: rgb(70, 69, 69);
+        text-decoration: none;
+        margin-left: 1px;
+    }
+
+.fa-bars {display: none;
+    }
+
+}
