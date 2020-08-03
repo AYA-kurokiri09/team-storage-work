@@ -9,5 +9,9 @@ class ServiceController extends Controller
     public function index() {
         return view('service.index');
     }
+
+    public function index_admin() {
+        return view('service.index_admin');
+    }
     
 }

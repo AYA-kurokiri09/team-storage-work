@@ -15,4 +15,5 @@ mix.version();
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/service.scss', 'public/css');
+    .sass('resources/sass/service.scss', 'public/css')
+    .sass('resources/sass/service_admin.scss', 'public/css');

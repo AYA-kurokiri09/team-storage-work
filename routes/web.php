@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('service', 'ServiceController@index');
+Route::get('service_admin', 'ServiceController@index_admin');
