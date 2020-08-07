@@ -17,5 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
 Route::get('service', 'ServiceController@index');
 Route::get('service_admin', 'ServiceController@index_admin');
+
+Route::get('service/auth_login', 'ServiceController@getAuth');
+Route::post('service/auth_login', 'ServiceController@postAuth');
+
+Route::get('/home', 'HomeController@index')->name('home');

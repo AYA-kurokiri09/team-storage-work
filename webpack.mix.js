@@ -10,10 +10,6 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-mix.browserSync('localhost'); // ブラウザシンクを有効に
-mix.version(); 
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/service.scss', 'public/css')
-    .sass('resources/sass/service_admin.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css');

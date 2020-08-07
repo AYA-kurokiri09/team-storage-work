@@ -14,22 +14,18 @@
     <i class = "fas fa-bars"></i>
     </header>
     <p>管理者画面は<a href="#">こちら</a></p>
-    
-    
-    
 
     <div class="login_container">
-    <h1>勤労の虎</h1>
-    <label for="name">名前　　　</label>&nbsp;<input type="text" id="name"><br>
-    <label for="password">パスワード</label>&nbsp;<input type="text" id="password"><br>
+    <p>{{$message}}</p>
+    <form action="/service/auth_login" method="post">
+    @csrf
+    <label for="name">Eメール</label>&nbsp;<input type="text" name="email"><br>
+    <label for="password">パスワード</label>&nbsp;<input type="text" name="password"><br>
     <input type="submit" id="login" value="ログイン">
+    </form>
     </div>
     
-@if (Auth::check())
-<p>ログインしました。USER: {{$user->name}}</p>
-@else
-<p>※ログインしていません</p>
-@endif
+
                 
 </body>
 </html>
