@@ -6116,7 +6116,7 @@ header a {
   line-height: 3rem;
   width: 6rem;
   color: #fff;
-  background-color: #464545;
+  background-color: #464646;
   text-decoration: none;
   margin-left: 1px;
 }
@@ -6147,6 +6147,7 @@ p {
 
 .login_container input {
   margin-bottom: 0 auto 1rem;
+  border: solid 1px black;
 }
 
 .login_container #login {

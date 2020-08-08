@@ -24,4 +24,8 @@ Route::get('service_admin', 'ServiceController@index_admin');
 Route::get('service/auth_login', 'ServiceController@getAuth');
 Route::post('service/auth_login', 'ServiceController@postAuth');
 
+Route::get('service_main', 'ServiceController@main');
+
+Route::get('service_infile', 'ServiceController@infile');
+
 Route::get('/home', 'HomeController@index')->name('home');

@@ -33,5 +33,13 @@ class ServiceController extends Controller
     public function index_admin() {
         return view('service.index_admin');
     }
+
+    public function main() {
+        return view('service.main');
+    }
+
+    public function infile() {
+        return view('service.infile');
+    }
     
 }

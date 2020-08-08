@@ -16,9 +16,7 @@
     <i class = "fas fa-bars"></i>
     </header>
     <div class="folder_container">
-    <label for="">回覧資料</label><i class="fas fa-folder"></i>
-    <label for="">研修資料</label><i class="fas fa-folder"></i>
-    <label for="">法律関係</label><i class="fas fa-folder"></i>
+    <label for="">ファイルアップロード</label><i class="fas fa-file-upload"></i>
     </div>    
 </body>
 </html>
