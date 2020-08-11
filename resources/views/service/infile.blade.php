@@ -23,6 +23,13 @@
 	<input type="file" id="file" name="file" class="form-control">
     <button type="submit">アップロード</button>
     <a href="/storage/家計簿アプリ案【共同開発】.pdf">アップロードファイル</a>
-	</form> 
+    </form> 
+    
+    @if (session('file_name'))
+   <h4>Local</h4>
+   <a href="{{ asset('storage/'.session('file_name')) }}">Local</a>
+   <h4>S3</h4>
+   <a href="{{ Storage::disk('s3')->url(session('file_name')) }}">S3</a>
+    @endif
 </body>
 </html>
