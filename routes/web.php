@@ -27,5 +27,6 @@ Route::post('service/auth_login', 'ServiceController@postAuth');
 Route::get('service_main', 'ServiceController@main');
 
 Route::get('service_infile', 'ServiceController@infile');
+Route::post('service_infile', 'ServiceController@store');
 
 Route::get('/home', 'HomeController@index')->name('home');

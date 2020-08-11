@@ -41,5 +41,11 @@ class ServiceController extends Controller
     public function infile() {
         return view('service.infile');
     }
+
+    public function store(Request $request){
+        $file_name = $request->file('file')->getClientOriginalName();
+        $request->file('file')->storeAs('public',$file_name);
+        return redirect('/service_infile');
+    }
     
 }

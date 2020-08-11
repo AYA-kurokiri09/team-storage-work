@@ -6145,6 +6145,11 @@ p {
   padding: 0.5rem;
 }
 
+.folder_container .fa-file-upload {
+  font-size: 7rem;
+  margin-left: -6rem;
+}
+
 .folder_container label {
   position: relative;
   top: 1.5rem;

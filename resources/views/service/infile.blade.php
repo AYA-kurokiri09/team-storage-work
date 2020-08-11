@@ -17,6 +17,12 @@
     </header>
     <div class="folder_container">
     <label for="">ファイルアップロード</label><i class="fas fa-file-upload"></i>
-    </div>    
+    </div>   
+    <form method="POST" action="/service_infile" enctype="multipart/form-data">
+		{{ csrf_field() }}
+	<input type="file" id="file" name="file" class="form-control">
+    <button type="submit">アップロード</button>
+    <a href="/storage/家計簿アプリ案【共同開発】.pdf">アップロードファイル</a>
+	</form> 
 </body>
 </html>
