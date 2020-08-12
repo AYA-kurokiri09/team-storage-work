@@ -16,20 +16,19 @@
     <i class = "fas fa-bars"></i>
     </header>
     <div class="folder_container">
-    <label for="">ファイルアップロード</label><i class="fas fa-file-upload"></i>
-    </div>   
     <form method="POST" action="/service_infile" enctype="multipart/form-data">
 		{{ csrf_field() }}
 	<input type="file" id="file" name="file" class="form-control">
-    <button type="submit">アップロード</button>
-    <a href="/storage/家計簿アプリ案【共同開発】.pdf">アップロードファイル</a>
+    <button type="submit"><i class="fas fa-file-upload"></i>ファイルのアップロード</button>
     </form> 
-    
-    @if (session('file_name'))
-   <h4>Local</h4>
-   <a href="{{ asset('storage/'.session('file_name')) }}">Local</a>
-   <h4>S3</h4>
-   <a href="{{ Storage::disk('s3')->url(session('file_name')) }}">S3</a>
+
+    @if(isset($showFiles))
+    @foreach ($showFiles as $showFile)
+        <i class="fas fa-file-upload"></i>
+        <a href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a>
+    @endforeach
+    @else <p>データが保存されていません</p>
     @endif
+    </div>  
 </body>
 </html>

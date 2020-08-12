@@ -40,7 +40,8 @@ class ServiceController extends Controller
     }
 
     public function infile() {
-        return view('service.infile');
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.infile', compact('showFiles'));
     }
 
     public function store(Request $request){
@@ -48,7 +49,8 @@ class ServiceController extends Controller
         $request->file('file')->storeAs('public',$file_name);
         $contents = Storage::get('public/'.$file_name);
         Storage::disk('s3')->put($file_name, $contents, 'public');
-        return back()->with(['file_name' => $file_name]);
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.infile', compact('showFiles'));
     }
 
     

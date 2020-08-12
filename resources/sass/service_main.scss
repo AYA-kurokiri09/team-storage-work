@@ -31,16 +31,17 @@ header {color: #fff;
 p {text-align: right;
 }
 
+.fa-file-upload{
+    font-size: 6rem;
+ }
+
 .folder_container {
     width: 90%;
     margin: 3rem auto;
     i {font-size: 8rem;
        padding: 0.5rem;
     }
-    .fa-file-upload{
-       font-size: 7rem;
-       margin-left: -6rem;
-    }
+    
     label {position:relative;
         top:1.5rem; left:6.8rem;
     }
