@@ -6,29 +6,31 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="{{ asset('css/service_infile.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title>Service</title>
 </head>
 <body>
     <header>
-    <h2>研究開発部</h2><a href="#" id="logout">ログアウト</a>
-    <a href="#"><img src="{{asset('img/eigyo_gray.png')}}" alt=""></a>
-    <a href="#"><img src="{{asset('img/truck_gray.png')}}" alt=""></a>
-    <a href="#"><img src="{{asset('img/met_gray.png')}}" alt=""></a>
-    <a href="#"><img src="{{asset('img/jikken_gray.png')}}" alt=""></a>
-    <a href="#"><img src="{{asset('img/somu_gray.png')}}" alt=""></a>
+    <h2 id="department">研究開発部</h2><a href="#" id="logout">ログアウト</a>
+    <a href="#"><img src="{{asset('img/eigyo_gray.png')}}" alt="" title="営業部"></a>
+    <a href="#"><img src="{{asset('img/met_gray.png')}}" alt="" title="製造部"></a>
+    <a href="#"><img src="{{asset('img/jikken_gray.png')}}" alt="" title="研究開発部"></a>
+    <a href="#"><img src="{{asset('img/truck_gray.png')}}" alt="" title="運送部"></a>
+    <a href="#"><img src="{{asset('img/somu_gray.png')}}" alt="" title="総務部"></a>
     <i class = "fas fa-bars"></i>
     </header>
     
     <div class="menu">
         <div class="back">
-        <img src="{{asset('img/tiger_left.jpg')}}" alt=""><br>
-        <label for="tiger_left">「回覧資料」に戻る</label>
+        <img src="{{asset('img/arrow_left.png')}}" alt=""><br>
+        <label for="arrow_left"><a href="#">「回覧資料」に戻る</a></label> 
         </div>
-        <div class="file_menu">
+        <div class="file_menu" id="file_menu">
         <i class="fas fa-file-upload" id="fa-file-upload"></i><br>
-        <label for="fa-file-upload">アップロード</label>
+        <label for="fa-file-upload"><a href="#">アップロード</a></label>
         </div>
-        <div class="file_menu_hidden">
+        <img src="{{asset('img/arrow_right.png')}}" alt="" id="arrow_right">
+        <div class="file_menu_hidden" id="file_menu_hidden">
             <div class="form">
             <form method="POST" action="/service_infile" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -51,5 +53,6 @@
     @endif
      
     </div>
+    <script src="{{ asset('js/service_infile.js') }}"></script>
 </body>
 </html>
