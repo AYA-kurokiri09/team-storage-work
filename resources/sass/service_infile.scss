@@ -40,20 +40,25 @@ header {color: #fff;
         height: $header-height;
         width: 100%;
         display: inline-flex;
-        justify-content: flex-end;
+        justify-content: center;
     h2 {position: absolute;
        top:0.3rem; left:0.3rem; 
+        cursor: pointer;
+    }
+    #logout {display: none;
     }
     a {font-size: 1rem;
         text-align: center;
         line-height: $header-height;
-        width: 6rem;
-        color: #fff;
-        background-color: rgb(70, 70, 70);
-        text-decoration: none;
-        margin-left: 1px;
+        margin: 0.1rem 0.5rem;
+     }
+    img {display: block;
+        margin: 0 auto;
+        padding: 0.3rem;
+        height: $header-height;
+        width: $header-height;
     }
-
+    
     .fa-bars {display: none;
     }
 }

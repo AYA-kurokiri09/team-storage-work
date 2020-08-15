@@ -10,9 +10,12 @@
 </head>
 <body>
     <header>
-    <h2>研究開発部 ▼</h2>
-    <a href="#">マイページ</a>
-    <a href="#">ログアウト</a>
+    <h2>研究開発部</h2><a href="#" id="logout">ログアウト</a>
+    <a href="#"><img src="{{asset('img/eigyo_gray.png')}}" alt=""></a>
+    <a href="#"><img src="{{asset('img/truck_gray.png')}}" alt=""></a>
+    <a href="#"><img src="{{asset('img/met_gray.png')}}" alt=""></a>
+    <a href="#"><img src="{{asset('img/jikken_gray.png')}}" alt=""></a>
+    <a href="#"><img src="{{asset('img/somu_gray.png')}}" alt=""></a>
     <i class = "fas fa-bars"></i>
     </header>
     
