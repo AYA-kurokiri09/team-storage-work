@@ -24,7 +24,7 @@ class ServiceController extends Controller
         $password = $request->password;
         if (Auth::attempt(['email' => $email,
         'password' => $password])) {
-        $msg = 'ログインしました。'; //実際はメインページにリダイレクトさせる
+        $msg = 'ログインしました。'; //loginafter.blade.phpに飛ばす
         } else {
         $msg = 'ログインに失敗しました。';
         }
@@ -33,6 +33,10 @@ class ServiceController extends Controller
 
     public function index_admin() {
         return view('service.index_admin');
+    }
+
+    public function loginafter() {
+        return view('service.loginafter');
     }
 
     public function main() {

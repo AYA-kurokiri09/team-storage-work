@@ -6103,7 +6103,7 @@ readers do not read off random characters that represent icons */
 
 header {
   color: #fff;
-  background-color: black;
+  background-color: #000;
   height: 3rem;
   width: 100%;
   display: inline-flex;
@@ -6130,7 +6130,7 @@ header #logout {
   font-size: 1rem;
   margin: 0;
   padding: 0.5rem 2rem;
-  background-color: black;
+  background-color: #000;
   position: absolute;
   top: 2.5rem;
   left: 0;
@@ -6143,6 +6143,11 @@ header img {
   padding: 0.3rem;
   height: 3rem;
   width: 3rem;
+  opacity: 0.4;
+}
+
+header img:hover {
+  opacity: 1;
 }
 
 header .fa-bars {
@@ -6181,6 +6186,12 @@ header .fa-bars {
   cursor: pointer;
 }
 
+.menu .back img:hover,
+.menu .file_menu img:hover,
+.menu .folder_container img:hover {
+  opacity: 0.5;
+}
+
 .menu .back .fa-file-upload,
 .menu .back .fa-file-pdf,
 .menu .file_menu .fa-file-upload,
@@ -6192,6 +6203,16 @@ header .fa-bars {
   font-size: 6rem;
   text-align: center;
   cursor: pointer;
+  color: #000;
+}
+
+.menu .back .fa-file-upload:hover,
+.menu .back .fa-file-pdf:hover,
+.menu .file_menu .fa-file-upload:hover,
+.menu .file_menu .fa-file-pdf:hover,
+.menu .folder_container .fa-file-upload:hover,
+.menu .folder_container .fa-file-pdf:hover {
+  opacity: 0.5;
 }
 
 .menu .back label,
@@ -6200,6 +6221,12 @@ header .fa-bars {
   display: block;
   margin: -1rem;
   text-align: center;
+}
+
+.menu .back a,
+.menu .file_menu a,
+.menu .folder_container a {
+  color: #000;
 }
 
 .menu .back p,
@@ -6223,7 +6250,7 @@ header .fa-bars {
 .menu .file_menu_hidden button[type=submit] {
   display: block;
   font-size: 1.8rem;
-  border: solid 1px black;
+  border: solid 1px #000;
   border-radius: 4px;
   margin: 1rem auto;
   padding: 0 1rem;
@@ -6253,6 +6280,12 @@ header .fa-bars {
   cursor: pointer;
 }
 
+.folder_box .back img:hover,
+.folder_box .file_menu img:hover,
+.folder_box .folder_container img:hover {
+  opacity: 0.5;
+}
+
 .folder_box .back .fa-file-upload,
 .folder_box .back .fa-file-pdf,
 .folder_box .file_menu .fa-file-upload,
@@ -6264,6 +6297,16 @@ header .fa-bars {
   font-size: 6rem;
   text-align: center;
   cursor: pointer;
+  color: #000;
+}
+
+.folder_box .back .fa-file-upload:hover,
+.folder_box .back .fa-file-pdf:hover,
+.folder_box .file_menu .fa-file-upload:hover,
+.folder_box .file_menu .fa-file-pdf:hover,
+.folder_box .folder_container .fa-file-upload:hover,
+.folder_box .folder_container .fa-file-pdf:hover {
+  opacity: 0.5;
 }
 
 .folder_box .back label,
@@ -6272,6 +6315,12 @@ header .fa-bars {
   display: block;
   margin: -1rem;
   text-align: center;
+}
+
+.folder_box .back a,
+.folder_box .file_menu a,
+.folder_box .folder_container a {
+  color: #000;
 }
 
 .folder_box .back p,
@@ -6287,5 +6336,6 @@ header .fa-bars {
 .folder_box a {
   display: block;
   margin-top: 1rem;
+  color: #000;
 }
 

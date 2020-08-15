@@ -12,17 +12,17 @@
 <body>
     <header>
     <h2 id="department">研究開発部</h2><a href="#" id="logout">ログアウト</a>
-    <a href="#"><img src="{{asset('img/eigyo_gray.png')}}" alt="" title="営業部"></a>
-    <a href="#"><img src="{{asset('img/met_gray.png')}}" alt="" title="製造部"></a>
-    <a href="#"><img src="{{asset('img/jikken_gray.png')}}" alt="" title="研究開発部"></a>
-    <a href="#"><img src="{{asset('img/truck_gray.png')}}" alt="" title="運送部"></a>
-    <a href="#"><img src="{{asset('img/somu_gray.png')}}" alt="" title="総務部"></a>
+    <a href="#"><img src="{{asset('img/eigyo_white.png')}}" alt="" title="営業部"></a>
+    <a href="#"><img src="{{asset('img/met_white.png')}}" alt="" title="製造部"></a>
+    <a href="#"><img src="{{asset('img/jikken_white.png')}}" alt="" title="研究開発部"></a>
+    <a href="#"><img src="{{asset('img/truck_white.png')}}" alt="" title="運送部"></a>
+    <a href="#"><img src="{{asset('img/somu_white.png')}}" alt="" title="総務部"></a>
     <i class = "fas fa-bars"></i>
     </header>
     
     <div class="menu">
         <div class="back">
-        <img src="{{asset('img/arrow_left.png')}}" alt=""><br>
+        <a href="#"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
         <label for="arrow_left"><a href="#">「回覧資料」に戻る</a></label> 
         </div>
         <div class="file_menu" id="file_menu">
@@ -45,8 +45,8 @@
     @if(isset($showFiles))
     @foreach ($showFiles as $showFile)
     <div class="folder_container">
-        <i class="far fa-file-pdf"></i>
-        <label for="file_url"><a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a></label>
+    <a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}"><i class="far fa-file-pdf"></i></a>
+    <label for="file_url"><a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a></label>
     </div>
         @endforeach
     @else <p>データが保存されていません</p>

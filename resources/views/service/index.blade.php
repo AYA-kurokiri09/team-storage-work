@@ -15,6 +15,7 @@
     <i class = "fas fa-bars"></i>
     </header>
     <p>管理者画面は<a href="#">こちら</a></p>
+    <img src="{{asset('img/tiger_left.jpg')}}" alt="">
     <div class="login_container">
     <h1>勤労の虎</h1>
     <label for="name">名前　　　</label>&nbsp;<input type="text" id="name"><br>
