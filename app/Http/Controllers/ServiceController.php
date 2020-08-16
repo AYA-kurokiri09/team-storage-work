@@ -59,7 +59,7 @@ class ServiceController extends Controller
     }
 
     protected function loggedOut(Request $request){
-       return redirect('service.index');
+       return redirect('service.index');//Auth::logout();を追記すること。ログイン後のルート保護後でないと有効にならなさそう。
      }
 
     
