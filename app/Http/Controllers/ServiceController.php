@@ -4,31 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Storage; 
+use Storage;
+use AuthenticatesUsers;
 
 class ServiceController extends Controller
 {
-    public function index(Request $request) {
+    /*public function index(Request $request) {
         $user = Auth::user();
         $param = ['user' => $user];
         return view('service.index', $param);
-    }
+    }*/
 
-    public function getAuth(Request $request) {
+    public function index(Request $request) {
         $param = ['message' => 'ログインしてください。'];
-        return view('service.auth_login', $param);
+        return view('service.index', $param);
     }
 
-    public function postAuth(Request $request) {
-        $email = $request->email;
+    public function postIndex(Request $request) {
+        $name = $request->name;
         $password = $request->password;
-        if (Auth::attempt(['email' => $email,
+        if (Auth::attempt(['name' => $name,
         'password' => $password])) {
-        $msg = 'ログインしました。'; //loginafter.blade.phpに飛ばす
+        return redirect('service_loginafter');
         } else {
-        $msg = 'ログインに失敗しました。';
+        $msg = 'ログインに失敗しました。入力内容に誤りがないか確認して下さい。';
         }
-        return view('service.auth_login', ['message' => $msg]);
+        return view('service.index', ['message' => $msg]);
     }
 
     public function index_admin() {
@@ -56,6 +57,10 @@ class ServiceController extends Controller
         $showFiles = Storage::disk('s3')->files('/');
         return view('service.infile', compact('showFiles'));
     }
+
+    protected function loggedOut(Request $request){
+       return redirect('service.index');
+     }
 
     
     

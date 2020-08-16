@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="{{ asset('css/service.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
     <title>Service</title>
@@ -14,18 +15,19 @@
     <i class = "fas fa-bars"></i>
     </header>
     <p>管理者画面は<a href="#">こちら</a></p>
-
+    <img src="{{asset('img/tiger_left.jpg')}}" alt="">
     <div class="login_container">
-    <p>{{$message}}</p>
-    <form action="/service/auth_login" method="post">
-    @csrf
-    <label for="name">Eメール</label>&nbsp;<input type="text" name="email"><br>
-    <label for="password">パスワード</label>&nbsp;<input type="text" name="password"><br>
+    <h1>勤労の虎</h1>
+    <label for="name">名前　　　</label>&nbsp;<input type="text" id="name"><br>
+    <label for="password">パスワード</label>&nbsp;<input type="text" id="password"><br>
     <input type="submit" id="login" value="ログイン">
-    </form>
     </div>
     
-
+<!-- @if (Auth::check())
+<p>ログインしました。USER: {{$user->name}}</p>
+@else
+<p>※ログインしていません</p>
+@endif -->
                 
 </body>
 </html>

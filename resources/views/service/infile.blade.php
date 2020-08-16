@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-    <h2 id="department">研究開発部</h2><a href="#" id="logout">ログアウト</a>
+    <h2 id="department">研究開発部</h2><a href="{{route('backToIndex')}}" id="logout">ログアウト</a>
     <a href="#"><img src="{{asset('img/eigyo_white.png')}}" alt="" title="営業部"></a>
     <a href="#"><img src="{{asset('img/met_white.png')}}" alt="" title="製造部"></a>
     <a href="#"><img src="{{asset('img/jikken_white.png')}}" alt="" title="研究開発部"></a>

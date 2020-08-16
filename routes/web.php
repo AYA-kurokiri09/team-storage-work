@@ -19,10 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('service', 'ServiceController@index') ->name('service.index');
+Route::post('service', 'ServiceController@postIndex');
 Route::get('service_admin', 'ServiceController@index_admin') ->name('service.index_admin');
 
-Route::get('service/auth_login', 'ServiceController@getAuth');
-Route::post('service/auth_login', 'ServiceController@postAuth');
+
 
 Route::get('service_loginafter', 'ServiceController@loginafter') ->name('service.loginafter');
 
@@ -30,5 +30,6 @@ Route::get('service_main', 'ServiceController@main') ->name('service.main');
 
 Route::get('service_infile', 'ServiceController@infile') ->name('service.infile');
 Route::post('service_infile', 'ServiceController@store');
+Route::post('service_infile', 'ServiceController@loggedOut') ->name('backToIndex');
 
 Route::get('/home', 'HomeController@index')->name('home');
