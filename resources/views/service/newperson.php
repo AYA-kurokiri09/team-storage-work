@@ -16,12 +16,18 @@
     </header>
     <div class="login_container">
     新規登録
-    <form action="/service" method="post">
-    @csrf
+    <form action="/service_newperson" method="post">
+    @csrf <!-- とりあえず登録操作ができるようにする。多分エラーになるので、なぜ@csrfがそのまま表示されてしまうのか突き止めて解決する。後cssもきかせる。-->
     <label for="name">名前</label>&nbsp;<input type="text" name="name" id="name"><br>
-    <p>メールアドレス</p>
+    <label for="email">メールアドレス</label>&nbsp;<input type="text" name="email" id="email"><br>
     <label for="password">パスワード</label>&nbsp;<input type="text" name="password" id="password"><br>
-    <p>所属部署 (ラジオボタン択一式)</p>
+    <label for="password">所属部署</label>
+    <input type="radio" name="dependent">営業部
+    <input type="radio" name="dependent">製造部
+    <input type="radio" name="dependent">研究開発部
+    <input type="radio" name="dependent">運送部
+    <input type="radio" name="dependent">総務部
+    <br>
     <input type="submit" id="register" value="登録">
     </form>
     </div>  

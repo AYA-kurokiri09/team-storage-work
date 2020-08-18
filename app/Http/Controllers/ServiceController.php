@@ -9,12 +9,6 @@ use AuthenticatesUsers;
 
 class ServiceController extends Controller
 {
-    /*public function index(Request $request) {
-        $user = Auth::user();
-        $param = ['user' => $user];
-        return view('service.index', $param);
-    }*/
-
     public function index(Request $request) {
         if (Auth::check()) {
             return redirect('service_loginafter');
