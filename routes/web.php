@@ -22,15 +22,15 @@ Route::get('service', 'ServiceController@index') ->name('service.index');
 Route::post('service', 'ServiceController@postIndex');
 Route::get('service_admin', 'ServiceController@index_admin') ->name('service.index_admin');
 
+Route::get('service_newperson', 'ServiceController@newperson') ->name('service.newperson');
 
 
 Route::get('service_loginafter', 'ServiceController@loginafter') ->middleware('auth') ->name('service.loginafter');
-//->middleware('auth')を追記したらログイン保護をかけることに成功した。
-//しかし未ログインの場合デフォルトのログイン画面に飛ばされてしまうので、Laravel学習帳のやり方に変えてみる。
-Route::get('service_main', 'ServiceController@main') ->name('service.main');
+Route::get('service_main', 'ServiceController@main')  ->middleware('auth') ->name('service.main');
 
-Route::get('service_infile', 'ServiceController@infile') ->name('service.infile');
+Route::get('service_infile', 'ServiceController@infile')  ->middleware('auth') ->name('service.infile');
 Route::post('service_infile', 'ServiceController@store');
-Route::post('service_infile', 'ServiceController@loggedOut') ->name('backToIndex');
+
+Route::get('/logout', 'ServiceController@logOut') ->name('backToIndex');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -14,21 +14,17 @@
     <a href="{{ route('register') }}">新規登録</a>
     <i class = "fas fa-bars"></i>
     </header>
-    <p>管理者画面は<a href="{{route('service.index_admin')}}">こちら</a></p>
-    <img src="{{asset('img/tiger_left.jpg')}}" alt="">
     <div class="login_container">
-    <h1>勤労の虎</h1>
+    新規登録
     <form action="/service" method="post">
     @csrf
     <label for="name">名前</label>&nbsp;<input type="text" name="name" id="name"><br>
+    <p>メールアドレス</p>
     <label for="password">パスワード</label>&nbsp;<input type="text" name="password" id="password"><br>
-    <input type="submit" id="login" value="ログイン">
+    <p>所属部署 (ラジオボタン択一式)</p>
+    <input type="submit" id="register" value="登録">
     </form>
-    </div>
-    <a href="{{route('service.newperson')}}"><p>新規登録</p></a>
-    
-
-                
+    </div>  
 </body>
 </html>
 

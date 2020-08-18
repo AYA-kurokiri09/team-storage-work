@@ -17,7 +17,8 @@
     <a href="#"><img src="{{asset('img/somu_gray.png')}}" alt="" title="総務部"></a>
     <i class = "fas fa-bars"></i>
 <br>
-部署を選択してください
+<p>{{$user->name}}さん</p>
+<P>部署を選択してください</p>
 
 </body>
 </html>

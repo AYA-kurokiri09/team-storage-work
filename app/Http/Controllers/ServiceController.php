@@ -16,8 +16,11 @@ class ServiceController extends Controller
     }*/
 
     public function index(Request $request) {
-        $param = ['message' => 'ログインしてください。'];
-        return view('service.index', $param);
+        if (Auth::check()) {
+            return redirect('service_loginafter');
+        }
+        return view('service.index');
+        
     }
 
     public function postIndex(Request $request) {
@@ -36,8 +39,16 @@ class ServiceController extends Controller
         return view('service.index_admin');
     }
 
-    public function loginafter() {
-        return view('service.loginafter');
+    public function newperson(Request $request) {
+        if (Auth::check()) {
+            return redirect('service_loginafter');
+        }
+        return view('service.newperson');   
+    }
+
+    public function loginafter(Request $request) {
+        $user = Auth::user();
+        return view('service.loginafter', ['user' => $user]);
     }
 
     public function main() {
@@ -58,11 +69,8 @@ class ServiceController extends Controller
         return view('service.infile', compact('showFiles'));
     }
 
-    protected function loggedOut(Request $request){
-        
-       return redirect('service.index');//Auth::logout();を追記すること。ログイン後のルート保護後でないと有効にならなさそう。
-     }
-
-    
-    
+    public function logOut(Request $request){
+        Auth::logout();
+        return redirect('service');
+    }
 }
