@@ -25,6 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('service_infile', 'App\Policies\ServicePolicy@viewStore');
     }
 }

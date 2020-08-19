@@ -25,10 +25,16 @@
         <a href="#"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
         <label for="arrow_left"><a href="#">「回覧資料」に戻る</a></label> 
         </div>
+
+        @can('service_infile', auth()->user())
         <div class="file_menu" id="file_menu">
         <i class="fas fa-file-upload" id="fa-file-upload"></i><br>
         <label for="fa-file-upload"><a href="#">アップロード</a></label>
         </div>
+        @endcan
+
+        <!-- 削除機能をつける (開発者adminのみ使用可)-->
+
         <img src="{{asset('img/arrow_right.png')}}" alt="" id="arrow_right">
         <div class="file_menu_hidden" id="file_menu_hidden">
             <div class="form">

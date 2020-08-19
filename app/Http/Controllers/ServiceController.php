@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 use AuthenticatesUsers;
+use Illuminate\Support\Facades\Hash;
+
 
 class ServiceController extends Controller
 {
@@ -38,6 +41,19 @@ class ServiceController extends Controller
             return redirect('service_loginafter');
         }
         return view('service.newperson');   
+    }
+
+    public function personAdd(Request $request) {
+        $user = new User();
+        $user->fill([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            //ラジオボタンで選択された部署に登録する
+            'role' => 'employee' //管理職にチェックがついた場合は'manager'とする
+            ])
+            ->save();
+        return redirect('/service');
     }
 
     public function loginafter(Request $request) {

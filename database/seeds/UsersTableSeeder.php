@@ -16,19 +16,19 @@ class UsersTableSeeder extends Seeder
                 'name' => '開発者',
                 'role' => 'admin',
                 'email' => 'admin@example.com',
-                'password' => 'admin'
+                'password' => 'admin' //ハッシュ化する
             ],
             [
                 'name' => '管理職',
                 'role' => 'manager',
                 'email' => 'manager@example.com',
-                'password' => 'manager'
+                'password' => 'manager' //ハッシュ化する
             ],
             [
                 'name' => '一般社員',
                 'role' => 'employee',
                 'email' => 'employee@example.com',
-                'password' => 'employee'
+                'password' => 'employee' //ハッシュ化する
             ]
         ];
     
@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
                 'name' => $user['name'],
                 'email' => $user['email'],
                 'role' => $user['role'],
-                'password' => $user['password']
+                'password' => $user['password'] //ハッシュ化する
             ]);
     
         }

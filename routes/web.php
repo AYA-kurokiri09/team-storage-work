@@ -23,6 +23,7 @@ Route::post('service', 'ServiceController@postIndex');
 Route::get('service_admin', 'ServiceController@index_admin') ->name('service.index_admin');
 
 Route::get('service_newperson', 'ServiceController@newperson') ->name('service.newperson');
+Route::post('service_newperson', 'ServiceController@personAdd') ->name('service.personAdd');
 
 
 Route::get('service_loginafter', 'ServiceController@loginafter') ->middleware('auth') ->name('service.loginafter');

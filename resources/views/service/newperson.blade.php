@@ -10,14 +10,12 @@
 </head>
 <body>
     <header>
-    <!-- <a href="{{ route('login') }}">ログイン</a> -->
-    <a href="{{ route('register') }}">新規登録</a>
     <i class = "fas fa-bars"></i>
     </header>
     <div class="login_container">
     新規登録
-    <form action="/service_newperson" method="post">
-    @csrf <!-- とりあえず登録操作ができるようにする。多分エラーになるので、なぜ@csrfがそのまま表示されてしまうのか突き止めて解決する。後cssもきかせる。-->
+    <form action="{{route('service.personAdd')}}" method="post">
+    @csrf
     <label for="name">名前</label>&nbsp;<input type="text" name="name" id="name"><br>
     <label for="email">メールアドレス</label>&nbsp;<input type="text" name="email" id="email"><br>
     <label for="password">パスワード</label>&nbsp;<input type="text" name="password" id="password"><br>
@@ -28,9 +26,14 @@
     <input type="radio" name="dependent">運送部
     <input type="radio" name="dependent">総務部
     <br>
+    <input type="hidden" name="role">
+    <input type="checkbox" name="dependent">課長職以上の方はチェックをつけて下さい
+    <br>
     <input type="submit" id="register" value="登録">
     </form>
-    </div>  
+    </div> 
+    
+    登録後、ログインするとサービスが使えます！
 </body>
 </html>
 
