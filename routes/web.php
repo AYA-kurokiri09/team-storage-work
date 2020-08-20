@@ -31,6 +31,7 @@ Route::get('service_main', 'ServiceController@main')  ->middleware('auth') ->nam
 
 Route::get('service_infile', 'ServiceController@infile')  ->middleware('auth') ->name('service.infile');
 Route::post('service_infile', 'ServiceController@store');
+Route::delete('/{showFile}', 'ServiceController@deleteFile');
 
 Route::get('/logout', 'ServiceController@logOut') ->name('backToIndex');
 

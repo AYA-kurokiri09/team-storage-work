@@ -79,6 +79,11 @@ class ServiceController extends Controller
         return view('service.infile', compact('showFiles'));
     }
 
+    public function deleteFile($showFile){
+    Storage::disk('s3')->delete($showFile);
+    return redirect('service_infile');
+    }
+
     public function logOut(Request $request){
         Auth::logout();
         return redirect('service');

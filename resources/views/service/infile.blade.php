@@ -45,6 +45,8 @@
             <button type="submit"><i class="fas fa-file-upload"></i>アップロード</button>
             </form> 
         </div>
+
+        
     </div>
     <hr>
     <div class="folder_box">
@@ -53,6 +55,13 @@
     <div class="folder_container">
     <a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}"><i class="far fa-file-pdf"></i></a>
     <label for="file_url"><a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a></label>
+        <form action="{{ url("${showFile}") }}" method="post">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <!-- 実行権限：adminのみ -->
+        <!--メソッド実行前に「{{ファイル名}}を削除してもよろしいですか？」ダイアログが出るようにする -->
+        <button type="submit">削除</button>
+        </form>
     </div>
         @endforeach
     @else <p>データが保存されていません</p>
