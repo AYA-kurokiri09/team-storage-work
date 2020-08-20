@@ -20,11 +20,11 @@
     <label for="email">メールアドレス</label>&nbsp;<input type="text" name="email" id="email"><br>
     <label for="password">パスワード</label>&nbsp;<input type="text" name="password" id="password"><br>
     <label for="password">所属部署</label>
-    <input type="radio" name="dependent">営業部
-    <input type="radio" name="dependent">製造部
-    <input type="radio" name="dependent">研究開発部
-    <input type="radio" name="dependent">運送部
-    <input type="radio" name="dependent">総務部
+    <input type="radio" name="department" id="営業">営業部
+    <input type="radio" name="department" id="製造">製造部
+    <input type="radio" name="department" id="研究開発">研究開発部
+    <input type="radio" name="department" id="運送">運送部
+    <input type="radio" name="department" id="総務">総務部
     <br>
     <input type="hidden" name="role">
     <input type="checkbox" name="dependent">課長職以上の方はチェックをつけて下さい
@@ -32,7 +32,7 @@
     <input type="submit" id="register" value="登録">
     </form>
     </div> 
-    
+
     登録後、ログインするとサービスが使えます！
 </body>
 </html>

@@ -49,8 +49,8 @@ class ServiceController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            //ラジオボタンで選択された部署に登録する
-            'role' => 'employee' //管理職にチェックがついた場合は'manager'とする
+            //ラジオボタンで選択された部署(departmentカラム)に登録する
+            'role' => 'employee' //管理職にチェックがついた場合はroleをmanagerとする
             ])
             ->save();
         return redirect('/service');

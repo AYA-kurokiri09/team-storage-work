@@ -14,21 +14,24 @@ class UsersTableSeeder extends Seeder
         $users = [
             [
                 'name' => '開発者',
-                'role' => 'admin',
                 'email' => 'admin@example.com',
-                'password' => 'admin' //ハッシュ化する
+                'role' => 'admin',
+                'department' => '研究開発',
+                'password' => Hash::make('secret123')
             ],
             [
                 'name' => '管理職',
                 'role' => 'manager',
+                'department' => '営業',
                 'email' => 'manager@example.com',
-                'password' => 'manager' //ハッシュ化する
+                'password' => Hash::make('secret123')
             ],
             [
                 'name' => '一般社員',
                 'role' => 'employee',
+                'department' => '総務',
                 'email' => 'employee@example.com',
-                'password' => 'employee' //ハッシュ化する
+                'password' => Hash::make('secret123')
             ]
         ];
     
@@ -38,7 +41,8 @@ class UsersTableSeeder extends Seeder
                 'name' => $user['name'],
                 'email' => $user['email'],
                 'role' => $user['role'],
-                'password' => $user['password'] //ハッシュ化する
+                'department' => $user['department'],
+                'password' => $user['password']
             ]);
     
         }
