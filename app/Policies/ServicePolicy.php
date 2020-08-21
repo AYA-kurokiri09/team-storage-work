@@ -26,4 +26,8 @@ class ServicePolicy
         ];
         return (in_array($user->role, $user_types));
     }
+
+    public function deleteFileAdmin(User $user) {
+        return ($user->role === 'admin');
+    }
 }

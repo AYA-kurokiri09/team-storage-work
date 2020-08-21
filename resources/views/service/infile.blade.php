@@ -20,10 +20,31 @@
     <i class = "fas fa-bars"></i>
     </header>
     
+    <div class="folder_box">
+    @if(isset($showFiles))
+    @foreach ($showFiles as $showFile)
+    <div class="folder_container">
+    <a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}"><i class="far fa-file-pdf"></i></a>
+    <label for="file_url"><a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a></label>
+    @can('service_infile_delete', auth()->user())
+    <form action="{{ url("${showFile}") }}" method="post">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <!--メソッド実行前に「〇〇を削除してもよろしいですか？」ダイアログが出るようにする -->
+        <button type="submit">削除</button>
+        </form>
+    @endcan
+    </div>
+        @endforeach
+    @else <p>データが保存されていません</p>
+    @endif
+    </div>
+    
+    <hr>
     <div class="menu">
         <div class="back">
-        <a href="#"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
-        <label for="arrow_left"><a href="#">「回覧資料」に戻る</a></label> 
+        <a href="{{route('service.main')}}"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
+        <label for="arrow_left"><a href="{{route('service.main')}}">「回覧資料」に戻る</a></label> 
         </div>
 
         @can('service_infile', auth()->user())
@@ -32,9 +53,7 @@
         <label for="fa-file-upload"><a href="#">アップロード</a></label>
         </div>
         @endcan
-
-        <!-- 削除機能をつける (開発者adminのみ使用可)-->
-
+        
         <img src="{{asset('img/arrow_right.png')}}" alt="" id="arrow_right">
         <div class="file_menu_hidden" id="file_menu_hidden">
             <div class="form">
@@ -47,26 +66,6 @@
         </div>
 
         
-    </div>
-    <hr>
-    <div class="folder_box">
-    @if(isset($showFiles))
-    @foreach ($showFiles as $showFile)
-    <div class="folder_container">
-    <a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}"><i class="far fa-file-pdf"></i></a>
-    <label for="file_url"><a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a></label>
-        <form action="{{ url("${showFile}") }}" method="post">
-        {{ csrf_field() }}
-        {{ method_field('DELETE') }}
-        <!-- 実行権限：adminのみ -->
-        <!--メソッド実行前に「{{ファイル名}}を削除してもよろしいですか？」ダイアログが出るようにする -->
-        <button type="submit">削除</button>
-        </form>
-    </div>
-        @endforeach
-    @else <p>データが保存されていません</p>
-    @endif
-     
     </div>
     <script src="{{ asset('js/service_infile.js') }}"></script>
 </body>

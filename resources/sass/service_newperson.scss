@@ -1,0 +1,55 @@
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
+$header-height: 3rem;
+
+header{color: #fff;
+        background-color: black;
+        height: $header-height;
+        width: 100%;
+        display: inline-flex;
+        justify-content: flex-end;
+    a {font-size: 1rem;
+        text-align: center;
+        line-height: $header-height;
+        width: 6rem;
+        color: #fff;
+        background-color: rgb(70, 70, 70);
+        text-decoration: none;
+        margin-left: 1px;
+    }
+
+    .fa-bars {display: none;
+    }
+}
+
+img {display: block;
+    height: 7rem;
+    width: 10rem;
+    margin: 2rem auto 0;
+}
+
+.login_container {
+    width: 25rem;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border: solid 2px black;
+    border-radius: 10px;
+    h1 {text-align: center;
+    }
+    label{margin-left: 3rem;
+    }
+    input{margin-bottom: 0 auto 1rem;
+          border: solid 1px black;
+    }
+    #login{
+        display: block;
+        margin: 1rem auto;
+    }
+}
+
+#radio_emp {
+    display: none;
+}
