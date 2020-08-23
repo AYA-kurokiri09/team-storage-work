@@ -2,6 +2,10 @@
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+	font-family: 'Noto Sans Japanese', sans-serif;
+}
 
 $header-height: 3rem;
 
@@ -27,6 +31,7 @@ width: 100%;
 size: 2px;
 border-color: black;
 margin: 0 auto;
+margin-bottom: 1rem;
 }
 
 .login_container {
@@ -40,7 +45,8 @@ margin: 0 auto;
     text-align: center;
     }
     label {
-        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        font-weight: bold;
     }
     #name{
     padding-right: 5rem;
@@ -51,6 +57,10 @@ margin: 0 auto;
     #inputArea{margin: 0 auto 1rem;
       border: solid 1px black;
     }
+    #department{
+    margin-left: 7rem;
+    }
+    
     #login, #register{
     display: block;
     text-align: center;

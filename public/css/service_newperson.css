@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);@charset "UTF-8";
 
 /*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
@@ -6101,6 +6101,10 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+body {
+  font-family: "Noto Sans Japanese", sans-serif;
+}
+
 header {
   color: #fff;
   background-color: black;
@@ -6128,6 +6132,7 @@ hr {
   size: 2px;
   border-color: black;
   margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .login_container {
@@ -6147,7 +6152,8 @@ hr {
 }
 
 .login_container label {
-  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
 }
 
 .login_container #name {
@@ -6161,6 +6167,10 @@ hr {
 .login_container #inputArea {
   margin: 0 auto 1rem;
   border: solid 1px black;
+}
+
+.login_container #department {
+  margin-left: 7rem;
 }
 
 .login_container #login,
