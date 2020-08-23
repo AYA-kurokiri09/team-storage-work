@@ -6,47 +6,70 @@
 $header-height: 3rem;
 
 header{color: #fff;
-        background-color: black;
-        height: $header-height;
-        width: 100%;
-        display: inline-flex;
-        justify-content: flex-end;
-    a {font-size: 1rem;
-        text-align: center;
-        line-height: $header-height;
-        width: 6rem;
-        color: #fff;
-        background-color: rgb(70, 70, 70);
-        text-decoration: none;
-        margin-left: 1px;
-    }
-
+    background-color: black;
+    height: $header-height;
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
     .fa-bars {display: none;
     }
 }
 
 img {display: block;
-    height: 7rem;
-    width: 10rem;
-    margin: 2rem auto 0;
+height: 4rem;
+width: 7rem;
+object-fit: contain;
+margin: 2rem auto 0;
+}
+
+hr {
+width: 100%;
+size: 2px;
+border-color: black;
+margin: 0 auto;
 }
 
 .login_container {
     width: 25rem;
     margin: 0 auto;
     padding: 0.5rem;
-    border: solid 2px black;
+    h3 {font-size: 1.5rem;
+    text-align: center;
+    }
+    h1 {font-size: 4rem;
+    text-align: center;
+    }
+    label {
+        margin-top: 0.5rem;
+    }
+    #name{
+    padding-right: 5rem;
+    }
+    #password{
+    padding-right: 2rem;
+    }
+    #inputArea{margin: 0 auto 1rem;
+      border: solid 1px black;
+    }
+    #login, #register{
+    display: block;
+    text-align: center;
+    margin: 2rem auto 0;
+    line-height: 3rem;
+    width: 15rem;
+    border: solid 1px black;
     border-radius: 10px;
-    h1 {text-align: center;
-    }
-    label{margin-left: 3rem;
-    }
-    input{margin-bottom: 0 auto 1rem;
-          border: solid 1px black;
-    }
-    #login{
-        display: block;
-        margin: 1rem auto;
+    background-color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+        h4 {
+        font-size: 1rem;
+        font-weight: normal;
+        }
+        p {
+        text-align: center;
+        }
     }
 }
 

@@ -6,24 +6,27 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="{{ asset('css/service.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
-    <title>Service</title>
+    <title>クラウドストレージ　虎の巻</title>
 </head>
 <body>
     <header>
     <i class = "fas fa-bars"></i>
     </header>
-    <p>管理者画面は<a href="{{route('service.index_admin')}}">こちら</a></p>
     <img src="{{asset('img/tiger_left.jpg')}}" alt="">
+    <hr noshade>
     <div class="login_container">
+    <h3>クラウドストレージ</h3>
     <h1>虎の巻</h1>
     <form action="/service" method="post">
     @csrf
-    <label for="name">名前</label>&nbsp;<input type="text" name="name" id="name"><br>
-    <label for="password">パスワード</label>&nbsp;<input type="text" name="password" id="password"><br>
+    <label for="name" id="name">名前</label>&nbsp;<input type="text" name="name" id="inputArea"><br>
+    <label for="password">パスワード</label>&nbsp;<input type="text" name="password" id="inputArea"><br>
     <input type="submit" id="login" value="ログイン">
     </form>
+    <a href="{{route('service.newperson')}}", id="register">
+    <h4>初めての方はこちら</h4>新規登録</a>
     </div>
-    <a href="{{route('service.newperson')}}"><p>新規登録</p></a>
+    
     
 
                 
