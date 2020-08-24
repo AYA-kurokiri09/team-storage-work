@@ -60,11 +60,15 @@ class ServiceController extends Controller
         $user = Auth::user();
         return view('service.loginafter', ['user' => $user]);
     }
-
+//研究開発部　メインページ
     public function main() {
         return view('service.main');
     }
-
+//営業部　メインページ
+    public function sales_main() {
+        return view('service.sales.sales_main');
+    }
+//研究開発部　回覧資料
     public function infile() {
         $showFiles = Storage::disk('s3')->files('/');
         return view('service.infile', compact('showFiles'));
@@ -83,6 +87,65 @@ class ServiceController extends Controller
     Storage::disk('s3')->delete($showFile);
     return redirect('service_infile');
     }
+//研究開発部　研修資料
+    public function rd_files_ojt() {
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.rd_files_ojt', compact('showFiles'));
+    }
+
+    public function rd_files_ojt_store(Request $request){
+        $file_name = $request->file('file')->getClientOriginalName();
+        $request->file('file')->storeAs('public',$file_name);
+        $contents = Storage::get('public/'.$file_name);
+        Storage::disk('s3')->put($file_name, $contents, 'public');
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.rd_files_ojt', compact('showFiles'));
+    }
+
+    public function rd_files_ojt_deleteFile($showFile){
+    Storage::disk('s3')->delete($showFile);
+    return redirect('service_rd_files_ojt');
+    }
+
+//営業部　回覧資料
+    public function sales_files_circulate() {
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.sales.sales_files_circulate', compact('showFiles'));
+    }
+
+    public function sales_files_circulate_store(Request $request){
+        $file_name = $request->file('file')->getClientOriginalName();
+        $request->file('file')->storeAs('public',$file_name);
+        $contents = Storage::get('public/'.$file_name);
+        Storage::disk('s3')->put($file_name, $contents, 'public');
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.sales.sales_files_circulate', compact('showFiles'));
+    }
+
+    public function sales_files_circulate_deleteFile($showFile){
+    Storage::disk('s3')->delete($showFile);
+    return redirect('service.sales.sales_files_circulate');
+    }
+//営業部　研修資料
+    public function sales_files_ojt() {
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.sales.sales_files_ojt', compact('showFiles'));
+    }
+
+    public function sales_files_ojt_store(Request $request){
+        $file_name = $request->file('file')->getClientOriginalName();
+        $request->file('file')->storeAs('public',$file_name);
+        $contents = Storage::get('public/'.$file_name);
+        Storage::disk('s3')->put($file_name, $contents, 'public');
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.sales.sales_files_ojt', compact('showFiles'));
+    }
+
+    public function rsales_files_ojt_deleteFile($showFile){
+    Storage::disk('s3')->delete($showFile);
+    return redirect('service.sales.sales_files_ojt');
+    }
+    
 
     public function logOut(Request $request){
         Auth::logout();
