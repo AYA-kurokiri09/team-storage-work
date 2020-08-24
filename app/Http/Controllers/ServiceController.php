@@ -64,10 +64,7 @@ class ServiceController extends Controller
     public function main() {
         return view('service.main');
     }
-//営業部　メインページ
-    public function sales_main() {
-        return view('service.sales.sales_main');
-    }
+
 //研究開発部　回覧資料
     public function infile() {
         $showFiles = Storage::disk('s3')->files('/');
@@ -107,6 +104,11 @@ class ServiceController extends Controller
     return redirect('service_rd_files_ojt');
     }
 
+//営業部　メインページ
+    public function sales_main() {
+    return view('service.sales.sales_main');
+}
+
 //営業部　回覧資料
     public function sales_files_circulate() {
         $showFiles = Storage::disk('s3')->files('/');
@@ -141,10 +143,54 @@ class ServiceController extends Controller
         return view('service.sales.sales_files_ojt', compact('showFiles'));
     }
 
-    public function rsales_files_ojt_deleteFile($showFile){
+    public function sales_files_ojt_deleteFile($showFile){
     Storage::disk('s3')->delete($showFile);
     return redirect('service.sales.sales_files_ojt');
     }
+
+//総務部　メインページ
+public function ganeral_main() {
+    return view('service.general.general_main');
+}
+    
+//総務部　回覧資料
+    public function general_files_circulate() {
+        $showFiles = Storage::disk('s3')->files('/');
+        return view('service.general.general_files_circulate', compact('showFiles'));
+    }
+    
+        public function general_files_circulate_store(Request $request){
+            $file_name = $request->file('file')->getClientOriginalName();
+            $request->file('file')->storeAs('public',$file_name);
+            $contents = Storage::get('public/'.$file_name);
+            Storage::disk('s3')->put($file_name, $contents, 'public');
+            $showFiles = Storage::disk('s3')->files('/');
+            return view('service.general.general_files_circulate', compact('showFiles'));
+        }
+    
+        public function general_files_circulate_deleteFile($showFile){
+        Storage::disk('s3')->delete($showFile);
+        return redirect('service.general.general_files_circulate');
+        }
+//総務部　研修資料
+        public function general_files_ojt() {
+            $showFiles = Storage::disk('s3')->files('/');
+            return view('service.general.general_files_ojt', compact('showFiles'));
+        }
+    
+        public function general_files_ojt_store(Request $request){
+            $file_name = $request->file('file')->getClientOriginalName();
+            $request->file('file')->storeAs('public',$file_name);
+            $contents = Storage::get('public/'.$file_name);
+            Storage::disk('s3')->put($file_name, $contents, 'public');
+            $showFiles = Storage::disk('s3')->files('/');
+            return view('service.general.general_files_ojt', compact('showFiles'));
+        }
+    
+        public function general_files_ojt_deleteFile($showFile){
+        Storage::disk('s3')->delete($showFile);
+        return redirect('service.general.general_files_ojt');
+        }
     
 
     public function logOut(Request $request){

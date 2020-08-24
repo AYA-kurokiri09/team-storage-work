@@ -28,6 +28,7 @@ Route::post('service_newperson', 'ServiceController@personAdd') ->name('service.
 Route::get('service_loginafter', 'ServiceController@loginafter') ->middleware('auth') ->name('service.loginafter');
 Route::get('service_main', 'ServiceController@main')  ->middleware('auth') ->name('service.main');
 Route::get('service_sales_main', 'ServiceController@sales_main')  ->middleware('auth') ->name('service.sales_main');
+Route::get('service_general_main', 'ServiceController@ganeral_main')  ->middleware('auth') ->name('service.general_main');
 
 //研究開発部　回覧資料
 Route::get('service_infile', 'ServiceController@infile')  ->middleware('auth') ->name('service.infile');
@@ -39,10 +40,21 @@ Route::post('service_rd_files_ojt', 'ServiceController@rd_files_ojt_store');
 
 //営業部　回覧資料
 Route::get('service_sales_files_circulate', 'ServiceController@sales_files_circulate')  ->middleware('auth') ->name('service.sales_files_circulate');
-Route::post('service_infile', 'ServiceController@sales_files_circulate_store');
+Route::post('service_sales_files_circulate', 'ServiceController@sales_files_circulate_store');
+Route::delete('/{showFile}', 'ServiceController@sales_files_circulate_deleteFile');
 //営業部　研修資料
 Route::get('service_sales_files_ojt', 'ServiceController@sales_files_ojt')  ->middleware('auth') ->name('service.sales_files_ojt');
 Route::post('service_sales_files_ojt', 'ServiceController@sales_files_ojt_store');
+Route::delete('/{showFile}', 'ServiceController@sales_files_ojt_deleteFile');
+
+//総務部　回覧資料
+Route::get('service_general_files_circulate', 'ServiceController@general_files_circulate')  ->middleware('auth') ->name('service.general_files_circulate');
+Route::post('service_general_files_circulate', 'ServiceController@general_files_circulate_store');
+Route::delete('/{showFile}', 'ServiceController@general_files_circulate_deleteFile');
+//総務部　研修資料
+Route::get('service_general_files_ojt', 'ServiceController@general_files_ojt')  ->middleware('auth') ->name('service.general_files_ojt');
+Route::post('service_general_files_ojt', 'ServiceController@general_files_ojt_store');
+Route::delete('/{showFile}', 'ServiceController@general_files_ojt_deleteFile');
 
 
 Route::get('/logout', 'ServiceController@logOut') ->name('backToIndex');

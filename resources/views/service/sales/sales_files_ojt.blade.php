@@ -44,7 +44,7 @@
     <div class="menu">
         <div class="back">
         <a href="{{route('service.main')}}"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
-        <label for="arrow_left"><a href="{{route('service.main')}}">「研修資料」に戻る</a></label> 
+        <label for="arrow_left"><a href="{{route('service.main')}}">フォルダ選択に戻る</a></label> 
         </div>
 
         @can('service_infile', auth()->user())

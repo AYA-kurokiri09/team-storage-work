@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="{{ asset('css/service_infile.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <title>Service</title>
+    <title>総務部　回覧資料</title>
 </head>
 <body>
     <header>
-    <h2 id="department">営業部</h2><a href="{{route('backToIndex')}}" id="logout">ログアウト</a>
+    <h2 id="department">総務部</h2><a href="{{route('backToIndex')}}" id="logout">ログアウト</a>
     <a href="#"><img src="{{asset('img/eigyo_white.png')}}" alt="" title="営業部"></a>
     <a href="#"><img src="{{asset('img/met_white.png')}}" alt="" title="製造部"></a>
     <a href="#"><img src="{{asset('img/jikken_white.png')}}" alt="" title="研究開発部"></a>
@@ -43,8 +43,8 @@
     <hr>
     <div class="menu">
         <div class="back">
-        <a href="{{route('service.main')}}"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
-        <label for="arrow_left"><a href="{{route('service.main')}}">フォルダ選択に戻る</a></label> 
+        <a href="{{route('service.general_main')}}"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
+        <label for="arrow_left"><a href="{{route('service.general_main')}}">フォルダ選択に戻る</a></label> 
         </div>
 
         @can('service_infile', auth()->user())
