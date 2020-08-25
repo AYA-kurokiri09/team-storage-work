@@ -49882,10 +49882,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/service_admin.scss":
-/*!*******************************************!*\
-  !*** ./resources/sass/service_admin.scss ***!
-  \*******************************************/
+/***/ "./resources/sass/service_infile.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/service_infile.scss ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49893,10 +49893,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/service_infile.scss":
-/*!********************************************!*\
-  !*** ./resources/sass/service_infile.scss ***!
-  \********************************************/
+/***/ "./resources/sass/service_loginafter.scss":
+/*!************************************************!*\
+  !*** ./resources/sass/service_loginafter.scss ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49927,17 +49927,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/service.scss ./resources/sass/service_admin.scss ./resources/sass/service_newperson.scss ./resources/sass/service_main.scss ./resources/sass/service_infile.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/service.scss ./resources/sass/service_newperson.scss ./resources/sass/service_loginafter.scss ./resources/sass/service_main.scss ./resources/sass/service_infile.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /var/www/laravel6/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /var/www/laravel6/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /var/www/laravel6/resources/sass/service.scss */"./resources/sass/service.scss");
-__webpack_require__(/*! /var/www/laravel6/resources/sass/service_admin.scss */"./resources/sass/service_admin.scss");
 __webpack_require__(/*! /var/www/laravel6/resources/sass/service_newperson.scss */"./resources/sass/service_newperson.scss");
+__webpack_require__(/*! /var/www/laravel6/resources/sass/service_loginafter.scss */"./resources/sass/service_loginafter.scss");
 __webpack_require__(/*! /var/www/laravel6/resources/sass/service_main.scss */"./resources/sass/service_main.scss");
 module.exports = __webpack_require__(/*! /var/www/laravel6/resources/sass/service_infile.scss */"./resources/sass/service_infile.scss");
 

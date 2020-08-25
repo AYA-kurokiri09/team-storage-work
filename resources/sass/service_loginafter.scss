@@ -2,28 +2,95 @@
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+	font-family: 'Noto Sans Japanese', sans-serif;
+}
 
 $header-height: 3rem;
-$body-height: 20rem;
 $menu-size: 10rem;
 $theme-color: #000;
 
-body {color: #fff;
-    height: $body-height;
-    width: 100%;
-    display: inline-flex;
-    align-content: center;
-    
-    img {display: block;
-        margin: 0 auto;
-        padding: 0.3rem;
-        height: $body-height /4;
-        width: $body-height /4;
-        &:hover {
-            opacity: 0.4;
+@mixin file_label_relation{
+    .back, .file_menu, .folder_container{
+        height: $menu-size;
+        width: $menu-size;
+        margin: 2rem;
+        cursor: pointer;
+            &:hover {
+                opacity: 0.5;
+            }
+        img {display: block;
+            margin-top: 1.5rem;
+            margin-left: 2rem;
+            height: 6rem;
+            width: 6rem;
+            text-align: center;
+            
+         }
+         
+        .fa-file-upload, .fa-file-pdf, .department_icon {display: block;
+            margin-top: 1.5rem;
+            font-size: 6rem;
+            text-align: center;
+            cursor: pointer;
+            color: $theme-color;
+            &:hover {
+                opacity: 0.5;
+            }
+         }
+         label{
+            display: block;
+            margin: -1rem;
+            text-align: center;
+         }
+         a {
+            color: $theme-color;
+         }
+         p {
+             font-size: 2rem;
+         }
+         .delete_method {
+             #trash{
+                height: 1.5rem;
+                width: 1.5rem;
+                position: relative;
+                top:-8rem; left: 5.5rem;
+            }
         }
     }
+  }
 
+  header{color: #fff;
+    background-color: black;
+    height: $header-height;
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
     .fa-bars {display: none;
     }
 }
+
+    .fa-bars {display: none;
+    }
+
+    p {font-size: 1.5rem;
+        text-align: center;
+    }
+
+.folder_box{
+    display: flex;
+    justify-content: center;
+    @include file_label_relation;
+    .fa-file-pdf, .department_icon {
+        display: block;
+    }
+    a {display: block;
+        font-size: 2rem;
+        margin-top: 1rem;
+        color: $theme-color;
+        text-decoration: none;
+    }
+}
+

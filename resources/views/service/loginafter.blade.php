@@ -6,17 +6,32 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="{{ asset('css/service_loginafter.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
-    <title>Service</title>
+    <title>虎の巻　部署選択画面</title>
 </head>
 <body>
-
-    <a href="{{route('service.sales_main')}}"><img src="{{asset('img/eigyo_gray.png')}}" alt="" title="営業部"></a>
-    <a href="{{route('service.main')}}"><img src="{{asset('img/jikken_gray.png')}}" alt="" title="研究開発部"></a>
-    <a href="{{route('service.general_main')}}"><img src="{{asset('img/somu_gray.png')}}" alt="" title="総務部"></a>
+<header>
     <i class = "fas fa-bars"></i>
-<br>
-<p>{{$user->name}}さん</p>
-<P>部署を選択してください</p>
+</header>
+<p>ようこそ、{{$user->name}}さん</p>
+<P>どの部署のファイルを閲覧しますか？</p>
+<div class="folder_box">
+    <div class="folder_container">
+        <a href="{{route('service.sales_main')}}"><img class="department_icon" src="{{asset('img/eigyo_gray.png')}}" alt=""></a></a>
+        <label for="sales">
+        <a id="sales" href ="{{route('service.sales_main')}}">営業部</a></label>
+    </div>
+    <div class="folder_container">
+        <a href="{{route('service.main')}}"><img class="department_icon" src="{{asset('img/jikken_gray.png')}}" alt=""></a></a>
+        <label for="file_url">
+        <a id="file_url" href ="{{route('service.main')}}">研究開発部</a></label>
+    </div>
+    <div class="folder_container">
+        <a href="{{route('service.general_main')}}"><img class="department_icon" src="{{asset('img/somu_gray.png')}}" alt=""></a></a>
+        <label for="file_url">
+        <a id="file_url" href ="{{route('service.general_main')}}">総務部</a></label>
+    </div>
+</div>
+
 
 </body>
 </html>

@@ -20,7 +20,7 @@
     <form action="/service" method="post">
     @csrf
     <label for="name" id="name">名前</label>&nbsp;<input type="text" name="name" id="inputArea"><br>
-    <label for="password">パスワード</label>&nbsp;<input type="text" name="password" id="inputArea"><br>
+    <label for="password">パスワード</label>&nbsp;<input type="password" name="password" id="inputArea"><br>
     <input type="submit" id="login" value="ログイン">
     </form>
     <a href="{{route('service.newperson')}}", id="register">
