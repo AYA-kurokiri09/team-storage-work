@@ -41,20 +41,18 @@ Route::post('service_rd_files_ojt', 'ServiceController@rd_files_ojt_store');
 //営業部　回覧資料
 Route::get('service_sales_files_circulate', 'ServiceController@sales_files_circulate')  ->middleware('auth') ->name('service.sales_files_circulate');
 Route::post('service_sales_files_circulate', 'ServiceController@sales_files_circulate_store');
-Route::delete('/{showFile}', 'ServiceController@sales_files_circulate_deleteFile');
+//Route::delete('/{showFile}', 'ServiceController@sales_files_circulate_deleteFile');等は無効。'/{showFile}'も変えて各ページ独自のdeleteメソッドを作るか？
 //営業部　研修資料
 Route::get('service_sales_files_ojt', 'ServiceController@sales_files_ojt')  ->middleware('auth') ->name('service.sales_files_ojt');
 Route::post('service_sales_files_ojt', 'ServiceController@sales_files_ojt_store');
-Route::delete('/{showFile}', 'ServiceController@sales_files_ojt_deleteFile');
 
 //総務部　回覧資料
 Route::get('service_general_files_circulate', 'ServiceController@general_files_circulate')  ->middleware('auth') ->name('service.general_files_circulate');
 Route::post('service_general_files_circulate', 'ServiceController@general_files_circulate_store');
-Route::delete('/{showFile}', 'ServiceController@general_files_circulate_deleteFile');
 //総務部　研修資料
 Route::get('service_general_files_ojt', 'ServiceController@general_files_ojt')  ->middleware('auth') ->name('service.general_files_ojt');
 Route::post('service_general_files_ojt', 'ServiceController@general_files_ojt_store');
-Route::delete('/{showFile}', 'ServiceController@general_files_ojt_deleteFile');
+
 
 
 Route::get('/logout', 'ServiceController@logOut') ->name('backToIndex');

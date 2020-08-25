@@ -10,12 +10,10 @@
 </head>
 <body>
 <header>
-    <h2 id="department">総務部</h2><a href="#" id="logout">ログアウト</a>
-    <a href="#"><img src="{{asset('img/eigyo_white.png')}}" alt="" title="営業部"></a>
-    <a href="#"><img src="{{asset('img/met_white.png')}}" alt="" title="製造部"></a>
-    <a href="#"><img src="{{asset('img/jikken_white.png')}}" alt="" title="研究開発部"></a>
-    <a href="#"><img src="{{asset('img/truck_white.png')}}" alt="" title="運送部"></a>
-    <a href="#"><img src="{{asset('img/somu_white.png')}}" alt="" title="総務部"></a>
+    <h2 id="department">総務部　トップページ</h2><a href="#" id="logout">ログアウト</a>
+    <a href="{{route('service.sales_main')}}"><img src="{{asset('img/eigyo_white.png')}}" alt="" title="営業部"></a>
+    <a href="{{route('service.main')}}"><img src="{{asset('img/jikken_white.png')}}" alt="" title="研究開発部"></a>
+    <a href="{{route('service.general_main')}}"><img src="{{asset('img/somu_white.png')}}" alt="" title="総務部"></a>
     <i class = "fas fa-bars"></i>
     </header>
     

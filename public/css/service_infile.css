@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);@charset "UTF-8";
 
 /*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
@@ -6101,6 +6101,10 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+body {
+  font-family: "Noto Sans Japanese", sans-serif;
+}
+
 header {
   color: #fff;
   background-color: #000;
@@ -6235,6 +6239,16 @@ header .fa-bars {
   font-size: 2rem;
 }
 
+.menu .back .delete_method #trash,
+.menu .file_menu .delete_method #trash,
+.menu .folder_container .delete_method #trash {
+  height: 1.5rem;
+  width: 1.5rem;
+  position: relative;
+  top: -8rem;
+  left: 5.5rem;
+}
+
 .menu .file_menu_hidden {
   display: none;
   height: 10rem;
@@ -6327,6 +6341,16 @@ header .fa-bars {
 .folder_box .file_menu p,
 .folder_box .folder_container p {
   font-size: 2rem;
+}
+
+.folder_box .back .delete_method #trash,
+.folder_box .file_menu .delete_method #trash,
+.folder_box .folder_container .delete_method #trash {
+  height: 1.5rem;
+  width: 1.5rem;
+  position: relative;
+  top: -8rem;
+  left: 5.5rem;
 }
 
 .folder_box .fa-file-pdf {

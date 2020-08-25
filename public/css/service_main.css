@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);@charset "UTF-8";
 
 /*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
@@ -6099,6 +6099,10 @@ readers do not read off random characters that represent icons */
 .fab {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
+}
+
+body {
+  font-family: "Noto Sans Japanese", sans-serif;
 }
 
 header {

@@ -99,11 +99,6 @@ class ServiceController extends Controller
         return view('service.rd_files_ojt', compact('showFiles'));
     }
 
-    public function rd_files_ojt_deleteFile($showFile){
-    Storage::disk('s3')->delete($showFile);
-    return redirect('service_rd_files_ojt');
-    }
-
 //営業部　メインページ
     public function sales_main() {
     return view('service.sales.sales_main');
@@ -124,10 +119,6 @@ class ServiceController extends Controller
         return view('service.sales.sales_files_circulate', compact('showFiles'));
     }
 
-    public function sales_files_circulate_deleteFile($showFile){
-    Storage::disk('s3')->delete($showFile);
-    return redirect('service.sales.sales_files_circulate');
-    }
 //営業部　研修資料
     public function sales_files_ojt() {
         $showFiles = Storage::disk('s3')->files('/');
@@ -141,11 +132,6 @@ class ServiceController extends Controller
         Storage::disk('s3')->put($file_name, $contents, 'public');
         $showFiles = Storage::disk('s3')->files('/');
         return view('service.sales.sales_files_ojt', compact('showFiles'));
-    }
-
-    public function sales_files_ojt_deleteFile($showFile){
-    Storage::disk('s3')->delete($showFile);
-    return redirect('service.sales.sales_files_ojt');
     }
 
 //総務部　メインページ
@@ -168,10 +154,6 @@ public function ganeral_main() {
             return view('service.general.general_files_circulate', compact('showFiles'));
         }
     
-        public function general_files_circulate_deleteFile($showFile){
-        Storage::disk('s3')->delete($showFile);
-        return redirect('service.general.general_files_circulate');
-        }
 //総務部　研修資料
         public function general_files_ojt() {
             $showFiles = Storage::disk('s3')->files('/');
@@ -186,12 +168,6 @@ public function ganeral_main() {
             $showFiles = Storage::disk('s3')->files('/');
             return view('service.general.general_files_ojt', compact('showFiles'));
         }
-    
-        public function general_files_ojt_deleteFile($showFile){
-        Storage::disk('s3')->delete($showFile);
-        return redirect('service.general.general_files_ojt');
-        }
-    
 
     public function logOut(Request $request){
         Auth::logout();
