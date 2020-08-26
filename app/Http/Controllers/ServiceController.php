@@ -82,7 +82,7 @@ class ServiceController extends Controller
 
     public function deleteFile($showFile){
     Storage::disk('s3')->delete($showFile);
-    return redirect('service_infile');
+    return back();
     }
 //研究開発部　研修資料
     public function rd_files_ojt() {
@@ -120,9 +120,9 @@ class ServiceController extends Controller
         return view('service.sales.sales_files_circulate', compact('showFiles'));
     }
 
-    //public function sales_files_circulate_deleteFile($showFile){
-        //Storage::disk('s3')->delete('/sales_circulate/{$showFile}');
-        //return redirect('service.sales.sales_files_circulate');
+    public function sales_files_circulate_deleteFile($showFile){
+        Storage::disk('s3')->delete('{$showFile}');
+        return redirect('service_sales_files_circulate');
     }
 
 //営業部　研修資料

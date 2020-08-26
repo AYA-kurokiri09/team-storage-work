@@ -41,7 +41,7 @@ Route::post('service_rd_files_ojt', 'ServiceController@rd_files_ojt_store');
 //営業部　回覧資料
 Route::get('service_sales_files_circulate', 'ServiceController@sales_files_circulate')  ->middleware('auth') ->name('service.sales_files_circulate');
 Route::post('service_sales_files_circulate', 'ServiceController@sales_files_circulate_store');
-//Route::delete('/sales_circulate/{showFile}', 'ServiceController@sales_files_circulate_deleteFile');
+Route::delete('/sales_circulate/{showFile}', 'ServiceController@sales_files_circulate_deleteFile');
 //営業部　研修資料
 Route::get('service_sales_files_ojt', 'ServiceController@sales_files_ojt')  ->middleware('auth') ->name('service.sales_files_ojt');
 Route::post('service_sales_files_ojt', 'ServiceController@sales_files_ojt_store');

@@ -26,14 +26,14 @@
     <label for="file_url">
     <a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a></label>
         <div class="delete_method">
-        @can('service_infile_delete', auth()->user())
-        <form action="{{ url("${showFile}") }}" method="post">
+        <!-- @can('service_infile_delete', auth()->user())  -->
+        <form action="{{ url("/sales_circulate/${showFile}") }}" method="post">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
             <!--メソッド実行前に「〇〇を削除してもよろしいですか？」ダイアログが出るようにする -->
             <button type="submit"><img src="{{asset('img/trash.png')}}" alt="" id="trash"></button>
             </form>
-        @endcan
+        <!-- @endcan -->
         </div>
     </div>
         @endforeach
