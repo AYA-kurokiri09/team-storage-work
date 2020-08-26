@@ -106,17 +106,23 @@ class ServiceController extends Controller
 
 //営業部　回覧資料
     public function sales_files_circulate() {
-        $showFiles = Storage::disk('s3')->files('/');
+        $showFiles = \Storage::disk('s3')->files('sales_circulate');
         return view('service.sales.sales_files_circulate', compact('showFiles'));
     }
 
     public function sales_files_circulate_store(Request $request){
+        $filePath = $request->file('file');
         $file_name = $request->file('file')->getClientOriginalName();
-        $request->file('file')->storeAs('public',$file_name);
-        $contents = Storage::get('public/'.$file_name);
-        Storage::disk('s3')->put($file_name, $contents, 'public');
-        $showFiles = Storage::disk('s3')->files('/');
+        $request->file('file')->storeAs('public/sales_circulate/',$file_name);
+        $contents = Storage::get('public/sales_circulate/'.$file_name); //ローカルのpublicでついた名前
+        Storage::disk('s3')->putFileAs('/sales_circulate' ,$filePath, $file_name, 'public');
+        $showFiles = \Storage::disk('s3')->files('sales_circulate');
         return view('service.sales.sales_files_circulate', compact('showFiles'));
+    }
+
+    //public function sales_files_circulate_deleteFile($showFile){
+        //Storage::disk('s3')->delete('/sales_circulate/{$showFile}');
+        //return redirect('service.sales.sales_files_circulate');
     }
 
 //営業部　研修資料

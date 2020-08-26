@@ -44,7 +44,7 @@
     <hr>
     <div class="menu">
         <div class="back">
-        <a href="{{route('service.main')}}"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
+        <a href="{{route('service.sales_main')}}"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
         <label for="arrow_left"><a href="{{route('service.main')}}">トップに戻る</a></label> 
         </div>
 
@@ -58,7 +58,7 @@
         <img src="{{asset('img/arrow_right.png')}}" alt="" id="arrow_right">
         <div class="file_menu_hidden" id="file_menu_hidden">
             <div class="form">
-            <form method="POST" action="/service_infile" enctype="multipart/form-data">
+            <form method="POST" action="/service_sales_files_circulate" enctype="multipart/form-data">
                 {{ csrf_field() }}
             <input type="file" id="file" name="file" class="form-control" value="クリックしてファイルを選択">
             </div> 
