@@ -58,7 +58,7 @@
         <img src="{{asset('img/arrow_right.png')}}" alt="" id="arrow_right">
         <div class="file_menu_hidden" id="file_menu_hidden">
             <div class="form">
-            <form method="POST" action="/service_infile" enctype="multipart/form-data">
+            <form method="POST" action="/service_sales_files_ojt" enctype="multipart/form-data">
                 {{ csrf_field() }}
             <input type="file" id="file" name="file" class="form-control" value="クリックしてファイルを選択">
             </div> 

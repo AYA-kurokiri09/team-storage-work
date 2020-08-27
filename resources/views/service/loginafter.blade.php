@@ -16,17 +16,17 @@
 <P>どの部署のファイルを閲覧しますか？</p>
 <div class="folder_box">
     <div class="folder_container">
-        <a href="{{route('service.sales_main')}}"><img class="department_icon" src="{{asset('img/eigyo_gray.png')}}" alt=""></a></a>
+        <a href="{{route('service.sales_main')}}"><img class="department_icon" src="{{asset('img/eigyo_black_128.png')}}" alt=""></a></a>
         <label for="sales">
         <a id="sales" href ="{{route('service.sales_main')}}">営業部</a></label>
     </div>
     <div class="folder_container">
-        <a href="{{route('service.main')}}"><img class="department_icon" src="{{asset('img/jikken_gray.png')}}" alt=""></a></a>
+        <a href="{{route('service.main')}}"><img class="department_icon" src="{{asset('img/jikken_black_128.png')}}" alt=""></a></a>
         <label for="file_url">
         <a id="file_url" href ="{{route('service.main')}}">研究開発部</a></label>
     </div>
     <div class="folder_container">
-        <a href="{{route('service.general_main')}}"><img class="department_icon" src="{{asset('img/somu_gray.png')}}" alt=""></a></a>
+        <a href="{{route('service.general_main')}}"><img class="department_icon" src="{{asset('img/somu_black_128.png')}}" alt=""></a></a>
         <label for="file_url">
         <a id="file_url" href ="{{route('service.general_main')}}">総務部</a></label>
     </div>
