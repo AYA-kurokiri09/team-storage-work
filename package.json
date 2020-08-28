@@ -29,5 +29,10 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.14.0"
-    }
+    },
+
+    "engines": {
+        "node": "12.x",
+        "npm": "6.x"
+      }
 }
