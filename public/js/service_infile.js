@@ -108,6 +108,11 @@ $(function () {
       });
     }
   });
+
+  function deleteChk() {
+    var flag = confirm("本当に削除してもよろしいですか？");
+    return flag;
+  }
 });
 
 /***/ }),

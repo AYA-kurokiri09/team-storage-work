@@ -26,11 +26,10 @@
     <label for="file_url">
     <a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a></label>
         <div class="delete_method">
-        <!--ファイル名の先頭をクリックしても削除できてしまう　原因：ボタンの位置だけを移動させているからだと思われる。
-        対処：ボタン位置を指定するpositionを削除し、その後class=delete_methodの大きさを削除ボタンと同じにし、このdivごとごと移動させる。 -->
+        <!--ファイル名の先頭をクリックしても削除できてしまう。原因：ボタンの位置だけを移動させているからだと思われる。-->
+        <!--対処：ボタン位置を指定するpositionを削除し、その後class=delete_methodの大きさを削除ボタンと同じにし、このdivごとごと移動させる。 -->
         @can('service_infile_delete', auth()->user())
-        <form action="{{ url("${showFile}") }}" method="post">
-        できてしまう不具合　推定される原因をメモ　infile.blade.php
+        <form action="{{ url("${showFile}") }}" method="post" onsubmit="return deleteChk()">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
             <!--メソッド実行前に「〇〇を削除してもよろしいですか？」ダイアログが出るようにする -->
@@ -72,5 +71,11 @@
         
     </div>
     <script src="{{ asset('js/service_infile.js') }}"></script>
+    <script>//一応動くので、jsファイルに記述を移す。あとはファイル名が入るようにする。
+    function deleteChk() {
+        let flag = confirm("本当に削除してもよろしいですか？");
+        return flag;
+    }
+    </script>
 </body>
 </html>
