@@ -18,6 +18,8 @@
     <i class = "fas fa-bars"></i>
     </header>
     
+    <!--「本日の目標」掲示板機能の実装を行う。内容と投稿者を表示し、その部署の人であれば権限関係なく書き込み可能とする。-->
+
     <div class="folder_box">
     @if(isset($showFiles))
     @foreach ($showFiles as $showFile)
