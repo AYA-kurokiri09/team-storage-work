@@ -1,3 +1,5 @@
+
+
 $(function() {
     $('#department').click(function(){
         if ($('#logout').is(':hidden')) {
@@ -20,7 +22,14 @@ $(function() {
         }
     })
 
-    
+    $('.deleteChk').click(function(){
+        var deletefilename = ($(this).attr('name'));
+        if(!confirm(deletefilename + 'を本当に削除しますか？')){
+            return false;
+        }else{
+        }
+      })
     
     
 });
+

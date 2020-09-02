@@ -30,8 +30,7 @@
         <form action="{{ url("${showFile}") }}" method="post">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
-            <!--メソッド実行前に「〇〇を削除してもよろしいですか？」ダイアログが出るようにする -->
-            <button type="submit"><img src="{{asset('img/trash.png')}}" alt="" id="trash"></button>
+            <button type="submit" id="js-getVariable" class="deleteChk" name="{{$showFile}}"><img src="{{asset('img/trash.png')}}" alt="" id="trash" ></button>
             </form>
         @endcan
         </div>
@@ -45,7 +44,7 @@
     <div class="menu">
         <div class="back">
         <a href="{{route('service.main')}}"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
-        <label for="arrow_left"><a href="{{route('service.main')}}">トップに戻る</a></label> 
+        <label for="arrow_left"><a href="{{route('service.main')}}">フォルダ選択に戻る</a></label> 
         </div>
 
         @can('service_infile', auth()->user())

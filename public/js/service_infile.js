@@ -108,11 +108,13 @@ $(function () {
       });
     }
   });
+  $('.deleteChk').click(function () {
+    var deletefilename = $(this).attr('name');
 
-  function deleteChk() {
-    var flag = confirm("本当に削除してもよろしいですか？");
-    return flag;
-  }
+    if (!confirm(deletefilename + 'を本当に削除しますか？')) {
+      return false;
+    } else {}
+  });
 });
 
 /***/ }),

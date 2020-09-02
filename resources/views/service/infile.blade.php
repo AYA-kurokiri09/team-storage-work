@@ -29,11 +29,10 @@
         <!--ファイル名の先頭をクリックしても削除できてしまう。原因：ボタンの位置だけを移動させているからだと思われる。-->
         <!--対処：ボタン位置を指定するpositionを削除し、その後class=delete_methodの大きさを削除ボタンと同じにし、このdivごとごと移動させる。 -->
         @can('service_infile_delete', auth()->user())
-        <form action="{{ url("${showFile}") }}" method="post" onsubmit="return deleteChk()">
+        <form action="{{ url("${showFile}") }}" method="post">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
-            <!--メソッド実行前に「〇〇を削除してもよろしいですか？」ダイアログが出るようにする -->
-            <button type="submit"><img src="{{asset('img/trash.png')}}" alt="" id="trash"></button>
+            <button type="submit" id="js-getVariable" class="deleteChk" name="{{$showFile}}"><img src="{{asset('img/trash.png')}}" alt="" id="trash" ></button>
             </form>
         @endcan
         </div>
@@ -47,7 +46,7 @@
     <div class="menu">
         <div class="back">
         <a href="{{route('service.main')}}"><img src="{{asset('img/arrow_left.png')}}" alt="" id="arrow_left"></a><br>
-        <label for="arrow_left"><a href="{{route('service.main')}}">トップに戻る</a></label> 
+        <label for="arrow_left"><a href="{{route('service.main')}}">フォルダ選択に戻る</a></label> 
         </div>
 
         @can('service_infile', auth()->user())
@@ -71,11 +70,6 @@
         
     </div>
     <script src="{{ asset('js/service_infile.js') }}"></script>
-    <script>//一応動くので、jsファイルに記述を移す。あとはファイル名が入るようにする。
-    function deleteChk() {
-        let flag = confirm("本当に削除してもよろしいですか？");
-        return flag;
-    }
-    </script>
+    
 </body>
 </html>
