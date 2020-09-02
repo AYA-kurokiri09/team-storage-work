@@ -67,7 +67,6 @@
             </form> 
         </div>
 
-        
     </div>
     <script src="{{ asset('js/service_infile.js') }}"></script>
     
