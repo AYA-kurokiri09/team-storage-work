@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\ServiceRequest;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 use AuthenticatesUsers;
@@ -43,7 +44,8 @@ class ServiceController extends Controller
         return view('service.newperson');   
     }
 
-    public function personAdd(Request $request) {
+    public function personAdd(ServiceRequest $request) {
+        $validated = $request->validated();
         $user = new User();
         $user->fill([
             'name' => $request->name,

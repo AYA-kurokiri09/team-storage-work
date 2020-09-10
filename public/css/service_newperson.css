@@ -6194,12 +6194,11 @@ hr {
   font-weight: normal;
 }
 
-.login_container #login p,
-.login_container #register p {
-  text-align: center;
-}
-
 #radio_emp {
   display: none;
+}
+
+p {
+  color: red;
 }
 
