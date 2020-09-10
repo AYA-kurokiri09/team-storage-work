@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/service');/*元はreturn view('welcome')だった*/
+    return redirect('/service');/*元はreturn view('welcome')だった*/ 
 });
 
 Auth::routes();
