@@ -45,7 +45,8 @@
     <br>
     <input type="radio" name="role" value="manager" id="manager">課長職以上の方はここにチェックを入れて下さい
     <input type="radio" name="role" value="employee" checked="checked" id="radio_emp">
-    <!-- radio_emp側をcheckedとしているので、見えているラジオボタンにチェックを入れないとrole = employeeとなる -->
+    <!--radio_emp側をcheckedとしているので、見えているラジオボタンにチェックを入れないとrole = employeeとなる -->
+    <!--「課長職以上」にチェックを入れても、もう一度クリックしたらチェックを外せるようにしたい-->
     <br>
     <input type="submit" id="register" value="登録">
     </form>
