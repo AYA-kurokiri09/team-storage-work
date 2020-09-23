@@ -28,9 +28,10 @@ class ServiceController extends Controller
         'password' => $password])) {
         return redirect('service_loginafter');
         } else {
-        $msg = 'ログインに失敗しました。入力内容に誤りがないか確認して下さい。';
-        }
+        $msg = "ログインに失敗しました。\n入力内容に誤りがないか確認して下さい。";
         return view('service.index', ['message' => $msg]);
+        }
+        
     }
 
     public function index_admin() {
