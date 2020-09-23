@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Hash;
 class ServiceController extends Controller
 {
     public function index(Request $request) {
+        $loginplease = ['message' => ''];
         if (Auth::check()) {
             return redirect('service_loginafter');
         }
-        return view('service.index');
+        return view('service.index', $loginplease);
         
     }
 
