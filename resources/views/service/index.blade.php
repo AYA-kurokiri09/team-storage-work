@@ -18,6 +18,7 @@
     <div class="login_container">
     <h3>クラウドストレージ</h3>
     <h1>虎の巻</h1>
+    <p>{!! nl2br(e($message)) !!}</p>
     <form action="/service" method="post">
     @csrf
     <label for="name" id="name">名前</label>&nbsp;<input type="text" name="name" id="inputArea"><br>
