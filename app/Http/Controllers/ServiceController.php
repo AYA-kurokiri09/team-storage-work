@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Hash;
 
 class ServiceController extends Controller
 {
+    public function intro() {        
+        return view('service.intro');
+    }
+
     public function index(Request $request) {
         $loginplease = ['message' => ''];
         if (Auth::check()) {
