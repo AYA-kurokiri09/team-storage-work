@@ -1,0 +1,30 @@
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+	font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+$header-height: 3rem;
+$menu-size: 10rem;
+$theme-color: #000;
+
+header {color: #fff;
+        background-color: $theme-color;
+        height: $header-height;
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
+    h2,h4 {display: inline;
+        line-height: $header-height;
+        }
+    a {color: #fff;
+        font-size: 1rem;
+        text-align: center;
+        line-height: $header-height;
+        padding: 0.1rem 0.5rem;
+      }
+
+}
