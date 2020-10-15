@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
     <title>クラウドストレージ　虎の巻</title>
 </head>
-<!--デザインした通りにコーディングする-->
 <body>
     <header>
     <i class = "fas fa-bars"></i>
@@ -18,6 +17,7 @@
     <div class="login_container">
     <h3>クラウドストレージ</h3>
     <h1>虎の巻</h1>
+    <p>{!! nl2br(e($message)) !!}</p>
     <form action="/service" method="post">
     @csrf
     <label for="name" id="name">名前</label>&nbsp;<input type="text" name="name" id="inputArea"><br>

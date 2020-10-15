@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('service_intro', 'ServiceController@intro') ->name('service.intro');
 Route::get('service', 'ServiceController@index') ->name('service.index');
 Route::post('service', 'ServiceController@postIndex');
-Route::get('service_admin', 'ServiceController@index_admin') ->name('service.index_admin');
 
 Route::get('service_newperson', 'ServiceController@newperson') ->name('service.newperson');
 Route::post('service_newperson', 'ServiceController@personAdd') ->name('service.personAdd');

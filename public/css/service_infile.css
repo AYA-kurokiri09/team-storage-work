@@ -6239,6 +6239,20 @@ header .fa-bars {
   font-size: 2rem;
 }
 
+.menu .back .delete_method,
+.menu .file_menu .delete_method,
+.menu .folder_container .delete_method {
+  height: 0;
+  width: 0;
+}
+
+.menu .back .delete_method #js-getVariable,
+.menu .file_menu .delete_method #js-getVariable,
+.menu .folder_container .delete_method #js-getVariable {
+  height: 0;
+  width: 0;
+}
+
 .menu .back .delete_method #trash,
 .menu .file_menu .delete_method #trash,
 .menu .folder_container .delete_method #trash {
@@ -6341,6 +6355,20 @@ header .fa-bars {
 .folder_box .file_menu p,
 .folder_box .folder_container p {
   font-size: 2rem;
+}
+
+.folder_box .back .delete_method,
+.folder_box .file_menu .delete_method,
+.folder_box .folder_container .delete_method {
+  height: 0;
+  width: 0;
+}
+
+.folder_box .back .delete_method #js-getVariable,
+.folder_box .file_menu .delete_method #js-getVariable,
+.folder_box .folder_container .delete_method #js-getVariable {
+  height: 0;
+  width: 0;
 }
 
 .folder_box .back .delete_method #trash,

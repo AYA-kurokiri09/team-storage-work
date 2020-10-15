@@ -1,10 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/service_intro.css": "/css/service_intro.css",
     "/css/service.css": "/css/service.css",
     "/css/service_newperson.css": "/css/service_newperson.css",
     "/css/service_loginafter.css": "/css/service_loginafter.css",
     "/css/service_main.css": "/css/service_main.css",
     "/css/service_infile.css": "/css/service_infile.css",
-    "/js/service_infile.js": "/js/service_infile.js"
+    "/js/service_infile.js": "/js/service_infile.js",
+    "/js/service_intro.js": "/js/service_intro.js"
 }

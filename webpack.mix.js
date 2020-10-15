@@ -12,8 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/service_intro.js', 'public/js')
     .js('resources/js/service_infile.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/service_intro.scss', 'public/css')
     .sass('resources/sass/service.scss', 'public/css')
     .sass('resources/sass/service_newperson.scss', 'public/css')
     .sass('resources/sass/service_loginafter.scss', 'public/css')

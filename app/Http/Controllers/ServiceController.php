@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Hash;
 
 class ServiceController extends Controller
 {
+    public function intro() {        
+        return view('service.intro');
+    }
+
     public function index(Request $request) {
+        $loginplease = ['message' => ''];
         if (Auth::check()) {
             return redirect('service_loginafter');
         }
-        return view('service.index');
+        return view('service.index', $loginplease);
         
     }
 
@@ -28,9 +33,10 @@ class ServiceController extends Controller
         'password' => $password])) {
         return redirect('service_loginafter');
         } else {
-        $msg = 'ログインに失敗しました。入力内容に誤りがないか確認して下さい。';
-        }
+        $msg = "ログインに失敗しました。\n入力内容に誤りがないか確認して下さい。";
         return view('service.index', ['message' => $msg]);
+        }
+        
     }
 
     public function index_admin() {

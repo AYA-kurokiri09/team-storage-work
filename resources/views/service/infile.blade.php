@@ -28,8 +28,6 @@
     <label for="file_url">
     <a id="file_url" href ="{{ Storage::disk('s3')->url("${showFile}")}}">{{$showFile}}</a></label>
         <div class="delete_method">
-        <!--ファイル名の先頭をクリックしても削除できてしまう。原因：ボタンの位置だけを移動させているからだと思われる。-->
-        <!--対処：ボタン位置を指定するpositionを削除し、その後class=delete_methodの大きさを削除ボタンと同じにし、このdivごとごと移動させる。 -->
         @can('service_infile_delete', auth()->user())
         <form action="{{ url("${showFile}") }}" method="post">
             {{ csrf_field() }}

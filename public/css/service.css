@@ -6151,6 +6151,12 @@ hr {
   margin-bottom: 1rem;
 }
 
+.login_container p {
+  text-align: center;
+  color: red;
+  padding-bottom: 1rem;
+}
+
 .login_container #name {
   padding-right: 3rem;
 }

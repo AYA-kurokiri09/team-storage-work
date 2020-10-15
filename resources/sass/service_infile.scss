@@ -50,6 +50,12 @@ $theme-color: #000;
              font-size: 2rem;
          }
          .delete_method {
+            height: 0;
+            width: 0;
+            #js-getVariable{
+                height: 0;
+                width: 0;
+            }
              #trash{
                 height: 1.5rem;
                 width: 1.5rem;
