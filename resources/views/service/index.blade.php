@@ -24,6 +24,12 @@
     <label for="password">パスワード</label>&nbsp;<input type="password" name="password" id="inputArea"><br>
     <input type="submit" id="login" value="ログイン">
     </form>
+    <form action="/service" method="post">
+    @csrf
+    <input type="hidden" name="name" value="開発者">
+    <input type="hidden" name="password" value="secret123">
+    <input type="submit" id="login" value="ゲストログイン">
+    </form>
     <a href="{{route('service.newperson')}}", id="register">
     <h4>初めての方はこちら</h4>新規登録</a>
     </div>
