@@ -36,7 +36,7 @@
         </div>
     </div>
         @endforeach
-    @else <p>データが保存されていません</p>
+    @else <p>データが保存されていません</p> //要リファクタリング
     @endif
     </div>
     
